@@ -11,9 +11,25 @@ def inicio(request):
 
 def agregar_profe(request):
 
-    profe1 = Profesor(nombre = "gaby", apellido = "rioja", email = "gabr@gmail.com", profesion = "genio")
-    profe1.save()
-    return HttpResponse (f"Hemos creado al profesor {profe1.nombre} a la base de datos.")
+    if request.method == 'POST':
+
+        miFormulario = formularioProfes(request.POST)
+
+        if miFormulario.is_valid():
+
+            infoDic = miFormulario.cleaned_data
+
+            profe1 = Profesor(nombre=infoDic['nombre'], apellido = infoDic['apellido'], email = infoDic['email'], profesion = infoDic['profesion'])
+
+            profe1.save()
+
+            return render(request, "AppCoder/inicio.html")
+
+    else:
+
+        miFormulario = formularioProfes()
+
+    return render(request, "AppCoder/crearProfesores.html", {"formulario3":miFormulario})
 
 def estudiantes(request):
 
@@ -83,3 +99,25 @@ def resultados(request):
         respuesta = "no enviaste datos."
     
     return HttpResponse(respuesta)
+
+def crear_entregables(request):
+
+    if request.method == 'POST':
+
+        miFormulario = formularioEntregables(request.POST)
+
+        if miFormulario.is_valid():
+
+            infoDic = miFormulario.cleaned_data
+
+            entregable1 = Entregable(nombre=infoDic['nombre'], fechaDeEntrega = infoDic['fechaDeEntrega'], entregado = infoDic['entregado'])
+
+            entregable1.save()
+
+            return render(request, "AppCoder/inicio.html")
+
+    else:
+
+        miFormulario = formularioEntregables()
+
+    return render(request, "AppCoder/crearEntregables.html", {"formulario2":miFormulario})
