@@ -76,7 +76,7 @@ def resultados(request):
         comision = request.GET["comision"]
         cursos = Curso.objects.filter(comision=comision)
 
-        return render(request, "AppCoder\templates\AppCoder\resultados.html", {"cursos":cursos, "comision":comision})
+        return render(request, "AppCoder/resultados.html", {"cursos":cursos, "comision":comision})
 
     else:
 
