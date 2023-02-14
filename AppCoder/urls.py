@@ -13,4 +13,8 @@ urlpatterns = [
     path('buscar_comision/', busquedaComision, name="Buscar Comision"),
     path('resultados/', resultados, name="Resultadosbusqueda"),
     path('crear_entregables/', crear_entregables, name="CrearEntregables"),
+    path('buscar_entregable/', busquedaEntregable, name="BusquedaEntregable"),
+    path('resultados2/', resultados2, name="Resultadosbusqueda2"),
+    path('buscar_estudiante/', busquedaEstudiante, name="BusquedaEstudiante"),
+    path('resultados3/', resultados3, name="Resultadosbusqueda3"),
 ]

@@ -121,3 +121,43 @@ def crear_entregables(request):
         miFormulario = formularioEntregables()
 
     return render(request, "AppCoder/crearEntregables.html", {"formulario2":miFormulario})
+
+def busquedaEntregable(request):
+
+    return render(request, "AppCoder/buscarEntregable.html")
+
+def busquedaEstudiante(request):
+
+    return render(request, "AppCoder/buscarEstudiante.html")
+
+def resultados2(request):
+
+    if request.GET["entregable"]:
+
+        nombre = request.GET["nombre"]
+        fechaDeEntrega = Entregable.objects.filter(fechaDeEntrega=fechaDeEntrega)
+        entregado = Entregable.objects.filter(entregado=entregado)
+
+        return render(request, "AppCoder/resultados2.html", {"nombre":nombre, "fechaDeEntrega":fechaDeEntrega})
+
+    else:
+
+        respuesta = "no enviaste datos."
+    
+    return HttpResponse(respuesta)
+
+def resultados3(request):
+
+    if request.GET["estudiante"]:
+
+        nombre = request.GET["nombre"]
+        apellido = Estudiante.objects.filter(apellido=apellido)
+        email = Estudiante.objects.filter(email=email)
+
+        return render(request, "AppCoder/resultados3.html", {"nombre":nombre, "apellido":apellido, "email":email})
+
+    else:
+
+        respuesta = "no enviaste datos."
+    
+    return HttpResponse(respuesta)
