@@ -11,5 +11,5 @@ urlpatterns = [
     path('crear_estudiante/', crear_estudiantes, name="Crear Estudiantes"),
     path('crear_cursos/', crear_cursos, name="Crear Cursos"),
     path('buscar_comision/', busquedaComision, name="Buscar Comision"),
-    path('resultados/', resultados, name="Resultados busqueda"),
+    path('resultados/', resultados, name="Resultadosbusqueda"),
 ]
