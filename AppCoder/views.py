@@ -170,9 +170,9 @@ def resultados4(request):
     if request.GET["profesor"]:
 
         nombre = request.GET["nombre"]
-        profesores = Profesor.objects.filter
+        profesores = Profesor.objects.filter(nombre__icontains=nombre)
 
-        return render(request, "AppCoder/resultados4.html", {"nombre":nombre, "apellido":apellido, "email":email, "profesion":profesion})
+        return render(request, "AppCoder/resultados4.html", {"nombre":nombre})
 
     else:
 
