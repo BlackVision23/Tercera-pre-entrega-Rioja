@@ -8,10 +8,10 @@
 </head>
 <body>
     
-    <p>Estamos buscando el Profesor: {{nombre}}</p>
+    <p>Estamos buscando al Profesor con email: {{email}}</p>
 
     {% for profesor in profesores %}
-        <p>Nombre: {{profesor.nombre}}</p>
+        <p>Nombre: {{profesor.nombre}} ---- Apellido: {{profesor.apellido}} ---- Email: {{profesor.email}} ---- Profesion: {{profesor.profesion}}</p>
     {% endfor %}
 
 </body>

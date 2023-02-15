@@ -8,11 +8,9 @@
 </head>
 <body>
     
-    <form action="{% url 'BusquedaProfesor' %}" method="GET">
-        <input type="text" name="nombre" id="nombre">
-        <input type="text" apellido="apellido" id="apellido">
-        <input type="email" email="email" id="email">
-        <input type="text" profesion="profesion" id="profesion">
+    <form action="{% url 'Resultadosbusqueda4' %}" method="GET">
+        <input placeholder="Buscar por email" type="email" name="email" id="email">
+      
         <input type="submit" value="Buscar">
 
 

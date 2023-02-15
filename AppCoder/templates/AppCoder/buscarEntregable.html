@@ -8,10 +8,9 @@
 </head>
 <body>
     
-    <form action="{% url 'BusquedaEntregable' %}" method="GET">
-        <input type="text" name="nombre" id="nombre">
-        <input type="date" name="fechaDeEntrega" id="fechaDeEntrega">
-        <input type="button" name="entregado" id="entregado">
+    <form action="{% url 'Resultadosbusqueda2' %}" method="GET">
+        <input placeholder="Buscar fecha de entrega" type="date" name="fechaDeEntrega" id="fechaDeEntrega">
+        
         <input type="submit" value="Buscar">
 
 
