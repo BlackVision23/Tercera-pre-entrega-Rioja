@@ -1,5 +1,5 @@
-Las herencias estan incluidas en los templates inicio:
-verCursos, verEntregables, verEstudiantes, verProfesores
+Las herencias estan incluidas en los templates:
+inicio, verCursos, verEntregables, verEstudiantes, verProfesores
 
 Hay 4 clases en modelos.py
 Estudiante, Profesor, Entregable, Curso
