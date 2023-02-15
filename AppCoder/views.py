@@ -132,13 +132,13 @@ def busquedaEstudiante(request):
 
 def resultados2(request):
 
-    if request.GET["entregable"]:
+    if request.GET["nombre"]:
 
         nombre = request.GET["nombre"]
         fechaDeEntrega = Entregable.objects.filter(fechaDeEntrega=fechaDeEntrega)
         entregado = Entregable.objects.filter(entregado=entregado)
 
-        return render(request, "AppCoder/resultados2.html", {"nombre":nombre, "fechaDeEntrega":fechaDeEntrega})
+        return render(request, "AppCoder/resultados2.html", {"nombre":nombre, "fechaDeEntrega":fechaDeEntrega, "entregado":entregado})
 
     else:
 
@@ -148,13 +148,31 @@ def resultados2(request):
 
 def resultados3(request):
 
-    if request.GET["estudiante"]:
+    if request.GET["nombre"]:
 
         nombre = request.GET["nombre"]
-        apellido = Estudiante.objects.filter(apellido=apellido)
-        email = Estudiante.objects.filter(email=email)
+        estudiantes = Estudiante.objects.filter(nombre__icontains=nombre)
+        
+        return render(request, "AppCoder/resultados3.html", {"nombre":nombre})
 
-        return render(request, "AppCoder/resultados3.html", {"nombre":nombre, "apellido":apellido, "email":email})
+    else:
+
+        respuesta = "no enviaste datos."
+    
+    return HttpResponse(respuesta)
+
+def busquedaProfesor(request):
+
+    return render(request, "AppCoder/buscarProfesor.html")
+
+def resultados4(request):
+
+    if request.GET["profesor"]:
+
+        nombre = request.GET["nombre"]
+        profesores = Profesor.objects.filter
+
+        return render(request, "AppCoder/resultados4.html", {"nombre":nombre, "apellido":apellido, "email":email, "profesion":profesion})
 
     else:
 
